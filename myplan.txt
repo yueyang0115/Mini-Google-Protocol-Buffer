@@ -1,0 +1,136 @@
+1.
+Task: Create a class called FieldGenerator which takes one field(one name and one type), and can generate one field. 
+Estimated Time: 1 hour
+Target Deadline: 01/29 
+Actual Time:
+Actual Delivery:
+Commit ID:
+Comments:
+
+2.
+Task: Generate get/set/add/num method for one field in FieldGenerator class. 
+Estimated Time: 1.5 hour
+Target Deadline: 01/29 
+Actual Time:
+Actual Delivery:
+Commit ID:
+Comments:
+
+3.
+Task: Generate constructor for one field in FieldGenerator class. 
+Estimated Time: 1.5 hour
+Target Deadline: 01/29
+Actual Time:
+Actual Delivery:
+Commit ID:
+Comments:
+
+4.
+Task: Create a class called ClassGenerator which takes multiple fields, iterates through all its fields and calls FieldGenerator, generates a class.   
+Estimated Time: 1 hour
+Target Deadline: 01/29 
+Actual Time:
+Actual Delivery:
+Commit ID:
+Comments:
+
+5.
+Task: Create a class called AllClassGenerator which takes multiple classes, iterates through all its classes and calls ClassGenerator, generates all classes.
+Estimated Time: 1 hour
+Target Deadline: 01/29
+Actual Time:
+Actual Delivery:
+Commit ID:
+Comments:
+
+6.
+Task: Create a class/method called Parse. Parse JSON file to get a data structure contains all classes, keep parsing and get one class, keep parsing and get one field, print out result to check.
+Estimated Time: 2 hour
+Target Deadline: 01/30
+Actual Time:
+Actual Delivery:
+Commit ID:
+Comments:
+
+
+7.
+Task: Take the parsed field as the input of FieldGenerator, take the parsed class as the input of ClassGenerator and take the parsed classes as the input of AllClassGenerator to test.
+Estimated Time: 2 hour
+Target Deadline: 01/30
+Actual Time:
+Actual Delivery:
+Commit ID:
+Comments:
+
+8.
+Task: Create the ClassBuilder class, realize its constructor and getclassnames method.  
+Estimated Time: 1.5 hour
+Target Deadline: 01/30
+Actual Time:
+Actual Delivery:
+Commit ID:
+Comments:
+
+9.
+Task: Realize Classbuilder's getsourcecode and creatallclasses method.
+Task: Estimated Time: 2 hour
+Target Deadline: 01/31
+Actual Time:
+Actual Delivery:
+Commit ID:
+Comments:
+
+10.
+Task: Modify FieldGenerator, check whether the type is array or not and generate specific methods.
+Estimated Time: 1.5 hour
+Target Deadline: 01/31
+Actual Time:
+Actual Delivery:
+Commit ID:
+Comments:
+
+11.
+Task: Modify FieldGenerator, handle recursive e situation.
+Estimated Time: 2 hour
+Target Deadline: 01/31
+Actual Time:
+Actual Delivery:
+Commit ID:
+Comments:
+
+12.
+Task: Modify FieldGenerator, handle multidimensional situation.
+Estimated Time: 2 hour
+Target Deadline: 02/01
+Actual Time:
+Actual Delivery:
+Commit ID:
+Comments:
+
+13.
+Task: Realize basic serialization.
+Estimated Time: 3 hour
+Target Deadline: 02/01
+Actual Time:
+Actual Delivery:
+Commit ID:
+Comments:
+
+14.
+Task: Realize basic deserialization.
+Estimated Time: 3 hour
+Target Deadline: 02/02
+Actual Time:
+Actual Delivery:
+Commit ID:
+Comments:
+
+15.
+Task: Modify Serialization and handle object field situation.
+Estimated Time: 2 hour
+Target Deadline: 02/02
+Actual Time:
+Actual Delivery:
+Commit ID:
+Comments:
+
