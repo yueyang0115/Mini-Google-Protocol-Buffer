@@ -18,14 +18,14 @@ public class FieldBuilder {
     GenerateMethod();
   }
 
-  public void Captalize() {
+  private void Captalize() {
     this.Name = this.name.substring(0, 1).toUpperCase() + this.name.substring(1);
   }
-  public void GenerateField() { // private int x;
+  private void GenerateField() { // private int x;
     field.append("private ").append(this.type).append(" ").append(this.name).append(";\n");
   }
 
-  public void GenerateMethod() {
+  private void GenerateMethod() {
     // public int getX(){  return x; }
     method.append("public ").append(this.type).append(" ").append("get").append(this.Name);
     method.append("(){\nreturn ").append(this.name).append(";\n}\n");
