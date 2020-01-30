@@ -2,19 +2,19 @@
 Task: Create a class called FieldGenerator which takes one field(one name and one type), and can generate one field. 
 Estimated Time: 1 hour
 Target Deadline: 01/29 
-Actual Time:
-Actual Delivery:
-Commit ID:
-Comments:
+Actual Time: 0.5 hour
+Actual Delivery: 01/29
+Commit ID: 778c83c4
+Comments: It took shorter time than I expected. I just didn't realize that all this task need is hard coding when I made the plan.
 
 2.
-Task: Generate get/set/add/num method for one field in FieldGenerator class. 
-Estimated Time: 1.5 hour
+Task: Generate get/set method for one field in FieldGenerator class. 
+Estimated Time: 1 hour
 Target Deadline: 01/29 
-Actual Time:
-Actual Delivery:
-Commit ID:
-Comments:
+Actual Time: 0.5 hour
+Actual Delivery: 01/29
+Commit ID: 778c83c4
+Comments: It took shorter time than I expected because I overestimated the difficulty.
 
 3.
 Task: Generate constructor for one field in FieldGenerator class. 
