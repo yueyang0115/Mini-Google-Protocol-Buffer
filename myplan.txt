@@ -17,6 +17,15 @@ Commit ID: 778c83c4
 Comments: It took shorter time than I expected because I overestimated the difficulty.
 
 3.
+Task: Create a class/method called FieldParse. Parse jsonarray field and get a hashmap containing "name" and "type".
+Estimated Time: 2 hour
+Target Deadline: 01/30
+Actual Time: 4 hour
+Actual Delivery: 01/30
+Commit ID:
+Comments: At first I tried to parse from the raw json string. It took me a long time to figure out how to use JsonArray and JsonObject, then I realized it was hard to debug and to think about the whole frame if I write a parse class which starts from parsing the original json file, so I minimize the parsed scale and changed to only parse one field. It was very easy to debug.
+
+3.
 Task: Generate constructor for one field in FieldGenerator class. 
 Estimated Time: 1.5 hour
 Target Deadline: 01/29
@@ -43,14 +52,7 @@ Actual Delivery:
 Commit ID:
 Comments:
 
-6.
-Task: Create a class/method called Parse. Parse JSON file to get a data structure contains all classes, keep parsing and get one class, keep parsing and get one field, print out result to check.
-Estimated Time: 2 hour
-Target Deadline: 01/30
-Actual Time:
-Actual Delivery:
-Commit ID:
-Comments:
+
 
 
 7.
