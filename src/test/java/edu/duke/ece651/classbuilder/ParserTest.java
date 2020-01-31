@@ -13,6 +13,6 @@ public class ParserTest {
     Parser myparser = new Parser(myobject);
     assertEquals("", myparser.getPack());
     assertEquals("Faculty", myparser.getClassmap().get("Course").get("instructor"));
-    System.out.println(myparser.getClass());
+    System.out.println(myparser.getClassmap());
   }
 }
