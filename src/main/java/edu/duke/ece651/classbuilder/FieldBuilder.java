@@ -1,4 +1,5 @@
 package edu.duke.ece651.classbuilder;
+import edu.duke.ece651.classbuilder.Capitalizer;
 
 public class FieldBuilder {
   private String name;
@@ -10,17 +11,13 @@ public class FieldBuilder {
   public FieldBuilder(String myname, String mytype) {
     this.name = myname;
     this.type = mytype;
-    this.Name = "";
+    this.Name = new Capitalizer(this.name).ToCapitalize();
     this.field = new StringBuilder();
     this.method = new StringBuilder();
-    Captalize();
     GenerateField();
     GenerateMethod();
   }
 
-  private void Captalize() {
-    this.Name = this.name.substring(0, 1).toUpperCase() + this.name.substring(1);
-  }
   private void GenerateField() { // private int x;
     field.append("private ").append(this.type).append(" ").append(this.name).append(";\n");
   }
