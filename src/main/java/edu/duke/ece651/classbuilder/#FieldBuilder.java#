@@ -10,7 +10,7 @@ public class FieldBuilder {
   public FieldBuilder(String myname, String mytype) {
     this.name = myname;
     this.type = mytype;
-    this.Name = new Capitalizer(this.name).ToCapitalize();
+    String Name = new Capitalizer(this.name).ToCapitalize();
     this.field = new StringBuilder();
     this.method = new StringBuilder();
     GenerateField();
