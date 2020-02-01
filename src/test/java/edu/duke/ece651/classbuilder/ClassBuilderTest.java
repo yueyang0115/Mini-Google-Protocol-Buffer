@@ -8,13 +8,22 @@ import org.junit.jupiter.api.Test;
 
 public class ClassBuilderTest {
   @Test
-  public void test_Parse() {
-    // InputStream r = getClass().getResourceAsStream(
-    // "/home/yy/ece651-dev-setup/yy258-json-651/src/test/resources/simple.json");
-    ClassBuilder mybuilder = new ClassBuilder(
-        "{'classes':[{'name':'Course','field':[{'name':'numStudents','type':'int'},{'name':'instructor','type':'Faculty'}]}]}");
+  public void test_ParseInputStream() {
+    InputStream r = getClass().getResourceAsStream("/simple.json");
+    ClassBuilder mybuilder = new ClassBuilder(r);
     assertEquals("", mybuilder.getPack());
-    assertEquals("Faculty", mybuilder.getClassmap().get("Course").get("instructor"));
+    System.out.println(mybuilder);
     System.out.println(mybuilder.getClassmap());
+    assertEquals("int", mybuilder.getClassmap().get("Test").get("x"));
+  }
+
+  @Test
+  public void test_ParseString() {
+    ClassBuilder mybuilder = new ClassBuilder(
+        "{'classes':[{'name':'Course','fields':[{'name':'numStudents','type':'int'},{'name':'instructor','type':'Faculty'}]}]}");
+    assertEquals("", mybuilder.getPack());
+    System.out.println(mybuilder);
+    System.out.println(mybuilder.getClassmap());
+    assertEquals("int", mybuilder.getClassmap().get("Course").get("numStudents"));
   }
 }

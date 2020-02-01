@@ -9,7 +9,7 @@ public class ClassParserTest {
   @Test
   public void test_ClassParser() {
     JSONArray classarray_1 = new JSONArray(
-        "[{'name':'Course','field':[{'name':'numStudents','type':'int'},{'name':'instructor','type':'Faculty'}]}]");
+        "[{'name':'Course','fields':[{'name':'numStudents','type':'int'},{'name':'instructor','type':'Faculty'}]}]");
     ClassParser myclass_1 = new ClassParser(classarray_1);
     assertEquals("Faculty", myclass_1.getClassmap().get("Course").get("instructor"));
     System.out.println(myclass_1.getClassmap());

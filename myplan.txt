@@ -37,12 +37,20 @@ Comments: It was easy to write ClassParser since it is similar with FieldBuilder
 5.
 Task: Create a class called Parser that can parse raw jsonobject, getPackage and getClassmap.
 Estimated Time: 1 hour
-Target Deadline: 01/31
+Target Deadline: 01/30
 Actual Time: 0.6 hour
 Actual Delivery: 01/31
 Commit ID:59b64b51
 Comments: It was easy to write Parser since it is similar with ClassParser.
 
+6.
+Task: ClassBuilder can take a json string, parse to fields. 
+Estimated Time: 1 hour
+Target Deadline: 01/30
+Actual Time: 1 hour
+Actual Delivery: 01/31
+Commit ID: fc65f5a6
+Comments: It is easy to write since all the previous work are done. Just need to pay attention to corner case.
 
 3.
 Task: Generate constructor for one field in FieldGenerator class. 

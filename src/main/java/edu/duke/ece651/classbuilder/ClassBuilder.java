@@ -18,16 +18,14 @@ public class ClassBuilder {
   public ClassBuilder(InputStream input_stream) {
     JSONTokener jsontokener = new JSONTokener(input_stream);
     this._json_object = new JSONObject(jsontokener);
+    // this._json_object = new JSONObject(input_stream);
     init();
   }
 
   private void init() {
     this._pack = "";
     this._classmap = new LinkedHashMap<String, LinkedHashMap<String, String>>();
-    ParseObject();
-  }
-
-  private void ParseObject() {
+    // System.out.println("begin parse pbject\n");
     Parser myparser = new Parser(_json_object);
     this._classmap = myparser.getClassmap();
     this._pack = myparser.getPack();

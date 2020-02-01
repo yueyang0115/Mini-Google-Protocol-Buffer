@@ -18,6 +18,7 @@ public class Parser {
   }
 
   private void generateClassMap() {
+    // System.out.println("generate classarray\n");
     JSONArray classarray = json_object.optJSONArray("classes");
     ClassParser myparser = new ClassParser(classarray);
     this.classmap = myparser.getClassmap();

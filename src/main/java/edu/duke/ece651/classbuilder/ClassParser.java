@@ -17,15 +17,18 @@ public class ClassParser {
   }
 
   private void ParseClass() {
+    // System.out.println("begin parse class\n");
     for (int i = 0; i < classarray.length(); i++) {
       JSONObject oneclass = classarray.getJSONObject(i);
 
       String classname = oneclass.optString("name");
-      JSONArray fieldarray = oneclass.optJSONArray("field");
+      JSONArray fieldarray = oneclass.optJSONArray("fields");
       if (fieldarray != null) {
+        // System.out.println("fieldarray!=null\n");
         FieldParser myfield = new FieldParser(fieldarray);
         this.classmap.put(classname, myfield.getFieldmap());
       } else {
+        // System.out.println("fieldarray==null\n");
         this.classmap.put(classname, null);
       }
     }
