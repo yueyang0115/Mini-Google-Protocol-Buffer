@@ -2,10 +2,10 @@
 Task: Create a class called FieldGenerator which takes one field(one name and one type), and can generate one field. 
 Estimated Time: 1 hour
 Target Deadline: 01/29 
-Actual Time: 0.5 hour
+Actual Time: 1 hour
 Actual Delivery: 01/29
 Commit ID: 778c83c4
-Comments: It took shorter time than I expected. I just didn't realize that all this task need is hard coding when I made the plan.
+Comments: It took shorter time than I expected. I just didn't realize that all this task need is hard coding when I made the plan. First time writing java takes some more time.
 
 2.
 Task: Generate get/set method for one field in FieldGenerator class. 
@@ -52,37 +52,25 @@ Actual Delivery: 01/31
 Commit ID: fc65f5a6
 Comments: It is easy to write since all the previous work are done. Just need to pay attention to corner case.
 
-3.
-Task: Generate constructor for one field in FieldGenerator class. 
-Estimated Time: 1.5 hour
-Target Deadline: 01/29
-Actual Time:
-Actual Delivery:
-Commit ID:
-Comments:
-
-4.
-Task: Create a class called ClassGenerator which takes multiple fields, iterates through all its fields and calls FieldGenerator, generates a class.   
-Estimated Time: 1 hour
-Target Deadline: 01/29 
-Actual Time:
-Actual Delivery:
-Commit ID:
-Comments:
-
-5.
-Task: Create a class called AllClassGenerator which takes multiple classes, iterates through all its classes and calls ClassGenerator, generates all classes.
-Estimated Time: 1 hour
-Target Deadline: 01/29
-Actual Time:
-Actual Delivery:
-Commit ID:
-Comments:
-
-
-
-
 7.
+Task: Create a class called ClassGenerator. It takes one class name and correponding fieldmap, and returns the class content as string. 
+Estimated Time: 1 hour
+Target Deadline: 01/29
+Actual Time: 1.5 hour
+Actual Delivery: 02/01
+Commit ID: 
+Comments: I spend a lot of time thinking about a better way to split my code into classes. Testing also takes some time. I did this task later on purpose because I realized that it was better to finish some other tasks before this one.
+
+8.
+Task: Create a class called Generator. It takes a classmap and returns the class content as string. 
+Estimated Time: 1 hour
+Target Deadline: 01/29
+Actual Time: 1.5 hour
+Actual Delivery: 02/01
+Commit ID: 
+Comments: I spend a lot of time thinking about a better way to split my code into classes and what type of data I should return. Testing also takes some time. I did this task later on purpose because I realized that it was better to finish some other tasks before this one.
+
+9.
 Task: Take the parsed field as the input of FieldGenerator, take the parsed class as the input of ClassGenerator and take the parsed classes as the input of AllClassGenerator to test.
 Estimated Time: 2 hour
 Target Deadline: 01/30
@@ -90,6 +78,25 @@ Actual Time:
 Actual Delivery:
 Commit ID:
 Comments:
+
+10.
+Task: Generate code to file.
+Estimated Time: 1 hour
+Target Deadline: 02/01
+Actual Time: 
+Actual Delivery: 
+Commit ID: 
+Comments: 
+
+3.
+Task: Generate constructor for one field in FieldGenerator class. 
+Estimated Time: 1.5 hour
+Target Deadline: 01/29
+Actual Time:
+Actual Delivery:
+Commit ID:
+Comments:I did this task later on purpose because I realized that it was better to finish some other tasks before this one.
+
 
 8.
 Task: Create the ClassBuilder class, realize its constructor and getclassnames method.  

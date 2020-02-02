@@ -1,13 +1,13 @@
 package edu.duke.ece651.classbuilder;
 
-public class FieldBuilder {
+public class FieldGenerator {
   private String name;
   private String type;
   private String Name;
   private StringBuilder field;
   private StringBuilder method;
 
-  public FieldBuilder(String myname, String mytype) {
+  public FieldGenerator(String myname, String mytype) {
     this.name = myname;
     this.type = mytype;
     this.Name = new Capitalizer(this.name).ToCapitalize();

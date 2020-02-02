@@ -1,14 +1,14 @@
 package edu.duke.ece651.classbuilder;
 
-import edu.duke.ece651.classbuilder.FieldBuilder;
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 
 public class ClassGenerator {
   private String classname;
-  private HashMap<String, String> fieldmap;
+  private LinkedHashMap<String, String> fieldmap;
   private StringBuilder classcontent;
 
-  public ClassGenerator(String name, HashMap<String, String> map) {
+  public ClassGenerator(String name, LinkedHashMap<String, String> map) {
     this.classname = name;
     this.fieldmap = map;
     this.classcontent = new StringBuilder();
@@ -16,12 +16,16 @@ public class ClassGenerator {
   }
 
   private void GenerateClass() {
+    StringBuilder fieldcontent = new StringBuilder();
+    StringBuilder methodcontent = new StringBuilder();
     classcontent.append("public class ").append(this.classname).append("{\n");
     for (HashMap.Entry<String, String> entry : fieldmap.entrySet()) {
-      FieldBuilder myfield = new FieldBuilder(entry.getKey(), entry.getValue());
-      classcontent.append(myfield.GetField());
-      classcontent.append(myfield.GetMethod());
+      FieldGenerator myfield = new FieldGenerator(entry.getKey(), entry.getValue());
+      fieldcontent.append(myfield.GetField());
+      methodcontent.append(myfield.GetMethod());
     }
+    classcontent.append(fieldcontent);
+    classcontent.append(methodcontent);
     classcontent.append("}\n");
   }
 

@@ -1,6 +1,7 @@
 package edu.duke.ece651.classbuilder;
 
 import java.io.InputStream;
+import java.util.HashMap;
 import java.util.LinkedHashMap;
 import org.json.JSONObject;
 import org.json.JSONTokener;
@@ -37,5 +38,9 @@ public class ClassBuilder {
 
   public LinkedHashMap<String, LinkedHashMap<String, String>> getClassmap() {
     return this._classmap;
+  }
+
+  public void GenerateClass() {
+    // Generator mygenerator = new Generator(this._classmap);
   }
 }
