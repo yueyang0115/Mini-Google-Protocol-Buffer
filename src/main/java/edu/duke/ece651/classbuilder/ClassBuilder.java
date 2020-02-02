@@ -10,6 +10,7 @@ public class ClassBuilder {
   private JSONObject _json_object;
   private String _pack;
   private LinkedHashMap<String, LinkedHashMap<String, String>> _classmap;
+  private LinkedHashMap<String, String> _codemap;
 
   public ClassBuilder(String input_string) {
     this._json_object = new JSONObject(input_string);
@@ -19,17 +20,27 @@ public class ClassBuilder {
   public ClassBuilder(InputStream input_stream) {
     JSONTokener jsontokener = new JSONTokener(input_stream);
     this._json_object = new JSONObject(jsontokener);
-    // this._json_object = new JSONObject(input_stream);
     init();
   }
 
   private void init() {
     this._pack = "";
     this._classmap = new LinkedHashMap<String, LinkedHashMap<String, String>>();
-    // System.out.println("begin parse pbject\n");
-    Parser myparser = new Parser(_json_object);
+
+    this._codemap = new LinkedHashMap<String, String>();
+    ParseObject();
+    GenerateCode();
+  }
+
+  private void ParseObject() {
+    Parser myparser = new Parser(this._json_object);
     this._classmap = myparser.getClassmap();
     this._pack = myparser.getPack();
+  }
+
+  private void GenerateCode() {
+    Generator mygenerator = new Generator(this._classmap);
+    this._codemap = mygenerator.getCodemap();
   }
 
   public String getPack() {
@@ -40,7 +51,7 @@ public class ClassBuilder {
     return this._classmap;
   }
 
-  public void GenerateClass() {
-    // Generator mygenerator = new Generator(this._classmap);
+  public LinkedHashMap<String, String> getAllcode() {
+    return this._codemap;
   }
 }
