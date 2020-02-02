@@ -1,0 +1,17 @@
+package edu.duke.ece651.classbuilder;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+import java.io.InputStream;
+import java.util.LinkedHashMap;
+import org.junit.jupiter.api.Test;
+
+public class CreatorTest {
+  @Test
+  public void test_Creator() {
+    InputStream r = getClass().getResourceAsStream("/simple.json");
+    ClassBuilder mybuilder = new ClassBuilder(r);
+    LinkedHashMap<String, String> codemap = r.getCodemap();
+    Creator mycreator = new Creator("", "", )
+  }
+}

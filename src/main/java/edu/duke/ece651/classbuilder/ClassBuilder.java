@@ -51,6 +51,8 @@ public class ClassBuilder {
     return this._codemap.get(className);
   }
 
+  public void createAllClasses(String basePath) {}
+
   public String getPack() {
     return this._pack;
   }
@@ -59,7 +61,7 @@ public class ClassBuilder {
     return this._classmap;
   }
 
-  public LinkedHashMap<String, String> getAllcode() {
+  public LinkedHashMap<String, String> getCodemap() {
     return this._codemap;
   }
 }

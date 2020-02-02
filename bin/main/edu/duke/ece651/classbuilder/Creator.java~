@@ -1,0 +1,23 @@
+package edu.duke.ece651.classbuilder;
+
+import java.util.HashMap;
+import java.util.LinkedHashMap;
+
+public class Creator {
+  private String basepath;
+  private String pack;
+  private LinkedHashMap<String, String> codemap;
+
+  public Creator(String mybasepath, String mypack, Linked<String, String> mycodemap) {
+    this.basepath = mybasepath;
+    this.pack = mypack;
+    this.codemap = mycodemap;
+  }
+
+  public void CreateAllFile() {
+    for (HashMap.Entry<String, String> entry : codemap.entrySet()) {
+      FileCreator myfilecreator = new FileCreator(filepath, entry.getValue());
+      myfilecreator.CreateFile();
+    }
+  }
+}

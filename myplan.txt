@@ -94,12 +94,30 @@ Estimated Time: 1 hour
 Target Deadline: 02/02
 Actual Time: 20 min
 Actual Delivery: 02/02
-Commit ID: 
+Commit ID: 7c5f4b5d
 Comments: Easy to realize since other codes are already written and tested.
 
 12.
+Task: Create a class called FileCreator that takes file_path and file_content, and generate a file in corresponding path.
+Estimated Time: 1 hour
+Target Deadline: 02/02
+Actual Time: 1.5
+Actual Delivery: 02/02
+Commit ID: 
+Comments: I spent a lot of time figuring out why emacs gave me FileNotFoundException when I was writing code. It turned out that I had to worte PrintWriter code in a try-catch block...
+
+13.
+Task: Create a class called Creator that takes base_path and codemap, and generates all classes files in corresponding path.
+Estimated Time: 1 hour
+Target Deadline: 02/02
+Actual Time: 1.5
+Actual Delivery: 02/02
+Commit ID: 
+Comments: I spent a lot of time figuring out why it didn't generate file but gave FileNotFoundexception. It turned out I should add "/" before my provided test path "home/yy/.....". Still confused...
+
+14.
 Task: Realize ClassBuilder's creatAllClasses method and generate code to file.
-Estimated Time: 2 hour
+Estimated Time: 0.5 hour
 Target Deadline: 02/02
 Actual Time: 
 Actual Delivery: 
@@ -135,6 +153,15 @@ Comments:I did this task later on purpose because I realized that it was better 
 
 16.
 Task: Modify FieldGenerator, generate constructor for array.
+Estimated Time: 2 hour
+Target Deadline: 02/02
+Actual Time:
+Actual Delivery:
+Commit ID:
+Comments:
+
+17.
+Task: Modify package related staff.
 Estimated Time: 2 hour
 Target Deadline: 02/02
 Actual Time:
