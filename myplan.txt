@@ -83,10 +83,10 @@ Comments: Easy to realize since I have thought about this task while doing previ
 Task: Realize ClassBuilder's getSourceCode method.
 Estimated Time: 1 hour
 Target Deadline: 02/02
-Actual Time: 
-Actual Delivery: 
+Actual Time: 15 min
+Actual Delivery: 02/02
 Commit ID: 
-Comments: 
+Comments: Easy to realize since other codes are already written and tested.
 
 11.
 Task: Realize ClassBuilder's getClassNames method.

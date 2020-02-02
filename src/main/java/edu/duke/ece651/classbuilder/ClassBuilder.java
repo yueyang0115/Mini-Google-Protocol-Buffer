@@ -26,13 +26,12 @@ public class ClassBuilder {
   private void init() {
     this._pack = "";
     this._classmap = new LinkedHashMap<String, LinkedHashMap<String, String>>();
-
     this._codemap = new LinkedHashMap<String, String>();
-    ParseObject();
+    ParseJson();
     GenerateCode();
   }
 
-  private void ParseObject() {
+  private void ParseJson() {
     Parser myparser = new Parser(this._json_object);
     this._classmap = myparser.getClassmap();
     this._pack = myparser.getPack();
@@ -41,6 +40,10 @@ public class ClassBuilder {
   private void GenerateCode() {
     Generator mygenerator = new Generator(this._classmap);
     this._codemap = mygenerator.getCodemap();
+  }
+
+  public String getSourceCode(String className) {
+    return this._codemap.get(className);
   }
 
   public String getPack() {
