@@ -103,7 +103,7 @@ Estimated Time: 1 hour
 Target Deadline: 02/02
 Actual Time: 1.5
 Actual Delivery: 02/02
-Commit ID: 
+Commit ID: 0669614b
 Comments: I spent a lot of time figuring out why emacs gave me FileNotFoundException when I was writing code. It turned out that I had to worte PrintWriter code in a try-catch block...
 
 13.
@@ -112,17 +112,17 @@ Estimated Time: 1 hour
 Target Deadline: 02/02
 Actual Time: 1.5
 Actual Delivery: 02/02
-Commit ID: 
+Commit ID: 0669614b
 Comments: I spent a lot of time figuring out why it didn't generate file but gave FileNotFoundexception. It turned out I should add "/" before my provided test path "home/yy/.....". Still confused...
 
 14.
 Task: Realize ClassBuilder's creatAllClasses method and generate code to file.
 Estimated Time: 0.5 hour
 Target Deadline: 02/02
-Actual Time: 
-Actual Delivery: 
+Actual Time: 45 min
+Actual Delivery: 02/02
 Commit ID: 
-Comments: 
+Comments: It was easy to geberate code to a file, but from the test-coverag I found that no matter the basepath have a "/" at the end or not, my code would always going into "last_charactor != "/" "condition and add one more "/" for the path. I failed to figure out why but found out that both "//" and "/" in the path can work. So I add one "/" at the end of every basepath...
 
 13.
 Task: Modify FieldGenerator, check whether the type is array and handle recursive e situation.

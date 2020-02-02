@@ -51,7 +51,10 @@ public class ClassBuilder {
     return this._codemap.get(className);
   }
 
-  public void createAllClasses(String basePath) {}
+  public void createAllClasses(String basePath) {
+    Creator mycreator = new Creator(basePath, _pack, _codemap);
+    mycreator.CreateAllFile();
+  }
 
   public String getPack() {
     return this._pack;

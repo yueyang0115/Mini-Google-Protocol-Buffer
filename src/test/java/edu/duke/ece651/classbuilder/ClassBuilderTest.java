@@ -9,14 +9,15 @@ import org.junit.jupiter.api.Test;
 public class ClassBuilderTest {
   @Test
   public void test_ClassBuilderStirng() {
-    InputStream r = getClass().getResourceAsStream("/simple.json");
+    InputStream r = getClass().getResourceAsStream("/simple.json"); /// name-reference.json
     ClassBuilder mybuilder = new ClassBuilder(r);
     assertEquals("", mybuilder.getPack());
     System.out.println(mybuilder);
     System.out.println(mybuilder.getClassmap());
-    assertEquals("int", mybuilder.getClassmap().get("Test").get("x"));
-    System.out.println(mybuilder.getSourceCode("Test"));
+    // assertEquals("int", mybuilder.getClassmap().get("Test").get("x"));
+    // System.out.println(mybuilder.getSourceCode("Test"));
     System.out.println(mybuilder.getClassNames());
+    mybuilder.createAllClasses("/home/yy/ece651-dev-setup/yy258-json-651/src/test/resources/1/");
   }
 
   @Test
@@ -29,5 +30,6 @@ public class ClassBuilderTest {
     assertEquals("int", mybuilder.getClassmap().get("Course").get("numStudents"));
     System.out.println(mybuilder.getSourceCode("Course"));
     System.out.println(mybuilder.getClassNames());
+    mybuilder.createAllClasses("/home/yy/ece651-dev-setup/yy258-json-651/src/test/resources/2");
   }
 }

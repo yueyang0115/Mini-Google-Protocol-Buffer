@@ -25,12 +25,19 @@ public class Creator {
 
   private String ModifyPath(String classname) {
     String filepath = this.basepath;
-    String last = filepath.substring(filepath.length() - 1);
-    if (last != "/") {
-      filepath += "/";
+    // String last = filepath.substring(filepath.length() - 1);
+    // char lastChar = filepath.charAt(filepath.length() - 1);
+    System.out.println(filepath);
+    filepath += "/" + classname + ".java";
+    // System.out.print(Character.toString(lastchar));
+    /*if (last != "/") {
+      System.out.println("last!=slash");
+      filepath += "/" + classname + ".java";
+    } else {
+      System.out.println("last == slash");
+      filepath += classname + ".java";
     }
-    filepath += classname + ".java";
-    //System.out.println(filepath);
+    */
     return filepath;
   }
 }
