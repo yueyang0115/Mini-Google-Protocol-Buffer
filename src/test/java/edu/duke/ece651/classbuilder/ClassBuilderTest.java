@@ -16,6 +16,7 @@ public class ClassBuilderTest {
     System.out.println(mybuilder.getClassmap());
     assertEquals("int", mybuilder.getClassmap().get("Test").get("x"));
     System.out.println(mybuilder.getSourceCode("Test"));
+    System.out.println(mybuilder.getClassNames());
   }
 
   @Test
@@ -27,5 +28,6 @@ public class ClassBuilderTest {
     System.out.println(mybuilder.getClassmap());
     assertEquals("int", mybuilder.getClassmap().get("Course").get("numStudents"));
     System.out.println(mybuilder.getSourceCode("Course"));
+    System.out.println(mybuilder.getClassNames());
   }
 }

@@ -1,6 +1,7 @@
 package edu.duke.ece651.classbuilder;
 
 import java.io.InputStream;
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import org.json.JSONObject;
@@ -40,6 +41,10 @@ public class ClassBuilder {
   private void GenerateCode() {
     Generator mygenerator = new Generator(this._classmap);
     this._codemap = mygenerator.getCodemap();
+  }
+
+  public Collection<String> getClassNames() {
+    return this._classmap.keySet();
   }
 
   public String getSourceCode(String className) {

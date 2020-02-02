@@ -85,17 +85,17 @@ Estimated Time: 1 hour
 Target Deadline: 02/02
 Actual Time: 15 min
 Actual Delivery: 02/02
-Commit ID: 
+Commit ID: bed7c906
 Comments: Easy to realize since other codes are already written and tested.
 
 11.
 Task: Realize ClassBuilder's getClassNames method.
 Estimated Time: 1 hour
 Target Deadline: 02/02
-Actual Time: 
-Actual Delivery: 
+Actual Time: 20 min
+Actual Delivery: 02/02
 Commit ID: 
-Comments: 
+Comments: Easy to realize since other codes are already written and tested.
 
 12.
 Task: Realize ClassBuilder's creatAllClasses method and generate code to file.
