@@ -1,5 +1,6 @@
 package edu.duke.ece651.classbuilder;
 
+import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -7,12 +8,14 @@ import org.json.JSONObject;
 public class ClassParser {
   private JSONArray classarray;
   // private JSONObject json_object;
-  private LinkedHashMap<String, LinkedHashMap<String, String>> classmap;
+  // private LinkedHashMap<String, LinkedHashMap<String, String>> classmap;
+  private LinkedHashMap<String, ArrayList<OneField>> classmap;
   // private LinkedHashMap<String, String> fieldmap;
 
   public ClassParser(JSONArray myarray) {
     this.classarray = myarray;
-    this.classmap = new LinkedHashMap<String, LinkedHashMap<String, String>>();
+    this.classmap = new LinkedHashMap<String, ArrayList<OneField>>();
+    // this.classmap = new LinkedHashMap<String, LinkedHashMap<String, String>>();
     ParseClass();
   }
 
@@ -26,7 +29,7 @@ public class ClassParser {
       if (fieldarray != null) {
         // System.out.println("fieldarray!=null\n");
         FieldParser myfield = new FieldParser(fieldarray);
-        this.classmap.put(classname, myfield.getFieldmap());
+        this.classmap.put(classname, myfield.getFieldlist());
       } else {
         // System.out.println("fieldarray==null\n");
         this.classmap.put(classname, null);
@@ -34,7 +37,8 @@ public class ClassParser {
     }
   }
 
-  public LinkedHashMap<String, LinkedHashMap<String, String>> getClassmap() {
+  // public LinkedHashMap<String, LinkedHashMap<String, String>> getClassmap() {
+  public LinkedHashMap<String, ArrayList<OneField>> getClassmap() {
     return this.classmap;
   }
 }

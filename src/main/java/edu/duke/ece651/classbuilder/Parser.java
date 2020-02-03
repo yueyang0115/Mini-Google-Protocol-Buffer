@@ -1,5 +1,6 @@
 package edu.duke.ece651.classbuilder;
 
+import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -7,12 +8,14 @@ import org.json.JSONObject;
 public class Parser {
   private JSONObject json_object;
   private String pack;
-  private LinkedHashMap<String, LinkedHashMap<String, String>> classmap;
+  // private LinkedHashMap<String, LinkedHashMap<String, String>> classmap;
+  private LinkedHashMap<String, ArrayList<OneField>> classmap;
 
   public Parser(JSONObject myobject) {
     this.json_object = myobject;
     this.pack = json_object.optString("package");
-    this.classmap = new LinkedHashMap<String, LinkedHashMap<String, String>>();
+    // this.classmap = new LinkedHashMap<String, LinkedHashMap<String, String>>();
+    this.classmap = new LinkedHashMap<String, ArrayList<OneField>>();
     generateClassMap();
     ;
   }
@@ -28,7 +31,8 @@ public class Parser {
     return this.pack;
   }
 
-  public LinkedHashMap<String, LinkedHashMap<String, String>> getClassmap() {
+  // public LinkedHashMap<String, LinkedHashMap<String, String>> getClassmap() {
+  public LinkedHashMap<String, ArrayList<OneField>> getClassmap() {
     return this.classmap;
   }
 }

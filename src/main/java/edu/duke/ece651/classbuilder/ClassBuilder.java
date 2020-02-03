@@ -1,6 +1,7 @@
 package edu.duke.ece651.classbuilder;
 
 import java.io.InputStream;
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
@@ -10,7 +11,9 @@ import org.json.JSONTokener;
 public class ClassBuilder {
   private JSONObject _json_object;
   private String _pack;
-  private LinkedHashMap<String, LinkedHashMap<String, String>> _classmap;
+  // private LinkedHashMap<String, LinkedHashMap<String, String>> _classmap;
+
+  private LinkedHashMap<String, ArrayList<OneField>> _classmap;
   private LinkedHashMap<String, String> _codemap;
 
   public ClassBuilder(String input_string) {
@@ -26,7 +29,8 @@ public class ClassBuilder {
 
   private void init() {
     this._pack = "";
-    this._classmap = new LinkedHashMap<String, LinkedHashMap<String, String>>();
+    // this._classmap = new LinkedHashMap<String, LinkedHashMap<String, String>>();
+    this._classmap = new LinkedHashMap<String, ArrayList<OneField>>();
     this._codemap = new LinkedHashMap<String, String>();
     ParseJson();
     GenerateCode();
@@ -60,7 +64,8 @@ public class ClassBuilder {
     return this._pack;
   }
 
-  public LinkedHashMap<String, LinkedHashMap<String, String>> getClassmap() {
+  // public LinkedHashMap<String, LinkedHashMap<String, String>> getClassmap() {
+  public LinkedHashMap<String, ArrayList<OneField>> getClassmap() {
     return this._classmap;
   }
 

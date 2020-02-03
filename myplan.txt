@@ -113,7 +113,7 @@ Target Deadline: 02/02
 Actual Time: 1.5
 Actual Delivery: 02/02
 Commit ID: 0669614b
-Comments: I spent a lot of time figuring out why it didn't generate file but gave FileNotFoundexception. It turned out I should add "/" before my provided test path "home/yy/.....". Still confused...
+Comments: I spent a lot of time figuring out why it didn't generate file but gave FileNotFoundexception. It turned out I should add "/" before my provided test path "home/yy/....." to make it be an absolute path.
 
 14.
 Task: Realize ClassBuilder's creatAllClasses method and generate code to file.
