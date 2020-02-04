@@ -1,9 +1,24 @@
+import java.util.*;
+import org.json.*;
+
 public class Matrix3d{
-private {"e":{"e":{"e":"int"}}} data;
-public {"e":{"e":{"e":"int"}}} getData(){
-return data;
+private ArrayList<Collection<Collection<Integer>>> data;
+
+public Matrix3d(){
+this.data = new ArrayList<>();
 }
-public void setData({"e":{"e":{"e":"int"}}} data){
-this.data=data;
+
+public int numDatas(){
+return data.length;
 }
+public void addDatas(Collection<Collection<Integer>> n){
+data.add(n);
+}
+public Collection<Collection<Integer>> getDatas(int index){
+return data.get(index);
+}
+public void setDatas(int index, Collection<Collection<Integer>> n){
+data.set(index,n);
+}
+
 }

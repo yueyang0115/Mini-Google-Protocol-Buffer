@@ -65,11 +65,11 @@ public class ClassBuilder {
   }
 
   // public LinkedHashMap<String, LinkedHashMap<String, String>> getClassmap() {
-  public LinkedHashMap<String, ArrayList<OneField>> getClassmap() {
+  /*public LinkedHashMap<String, ArrayList<OneField>> getClassmap() {
     return this._classmap;
   }
 
   public LinkedHashMap<String, String> getCodemap() {
     return this._codemap;
-  }
+    }*/
 }

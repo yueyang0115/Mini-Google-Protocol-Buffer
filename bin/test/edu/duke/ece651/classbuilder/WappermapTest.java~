@@ -4,11 +4,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
 
-public class OneFieldTest {
+public class WappermapTest {
   @Test
-  public void test_onefield() {
-    OneField myfield = new OneField();
-
-    System.out.println()
-  }
+  public void test_Wppermap() {}
 }

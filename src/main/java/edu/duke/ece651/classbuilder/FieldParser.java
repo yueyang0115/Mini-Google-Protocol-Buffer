@@ -33,6 +33,8 @@ public class FieldParser {
       JSONObject js = onefield.optJSONObject("type"); // jsonobject(e:int) or string(int)
       if (js == null) { // jump in here when type is not object e.g. (int)
         mytype = onefield.optString("type");
+        System.out.println("mytype is");
+        System.out.println(mytype);
       } else { // jump in here when type is object (e:int) js = e:int
         mydimension += 1;
         JSONObject lastparse = js;
