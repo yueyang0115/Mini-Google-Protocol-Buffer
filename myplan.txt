@@ -121,44 +121,27 @@ Estimated Time: 0.5 hour
 Target Deadline: 02/02
 Actual Time: 45 min
 Actual Delivery: 02/02
-Commit ID: 
+Commit ID: 71e4a557
 Comments: It was easy to geberate code to a file, but from the test-coverag I found that no matter the basepath have a "/" at the end or not, my code would always going into "last_charactor != "/" "condition and add one more "/" for the path. I failed to figure out why but found out that both "//" and "/" in the path can work. So I add one "/" at the end of every basepath...
 
-13.
-Task: Modify FieldGenerator, check whether the type is array and handle recursive e situation.
-Estimated Time: 2 hour
-Target Deadline: 02/02
-Actual Time:
-Actual Delivery:
-Commit ID:
-Comments:
-
-14.
-Task: Modify FieldGenerator and generate fields for array type.
-Estimated Time: 2 hour
-Target Deadline: 02/02
-Actual Time:
-Actual Delivery:
-Commit ID:
-Comments:
-
 15.
-Task: Modify FieldGenerator, generate methods for array. 
-Estimated Time: 1.5 hour
+Task: Modify FieldParser to handle multidimensional array.
+Estimated Time: 2 hour
 Target Deadline: 02/02
-Actual Time:
-Actual Delivery:
-Commit ID:
-Comments:I did this task later on purpose because I realized that it was better to finish some other tasks before this one.
+Actual Time: 4 hour
+Actual Delivery: 02/03
+Commit ID: abe81b46
+Comments: To handle multidimensional array, I changed my datastructure that used to store one field's information. From Parser to Generator, I changed all "HashMap<name,type> fieldmap" to "ArrayList<OneField> fieldlist" where OneField is the class I defined to store field infomation. Debugging and changing code was tough because sometimes optJSONObject returns null while other times optString returns null......   
 
 16.
-Task: Modify FieldGenerator, generate constructor for array.
-Estimated Time: 2 hour
+Task: Modify FieldGenerator and generate fields, methods and constructor for array type.
+Estimated Time: 4 hour
 Target Deadline: 02/02
-Actual Time:
-Actual Delivery:
-Commit ID:
-Comments:
+Actual Time: 4 hour
+Actual Delivery: 02/03
+Commit ID: d534f1b6
+Comments: I tried to do less hard-coding but it still cost me much time to generate fields, methods and constructor. Trying to do abstraction also costs some time.
+
 
 17.
 Task: Modify package related staff.

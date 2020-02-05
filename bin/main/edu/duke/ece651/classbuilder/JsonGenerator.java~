@@ -1,0 +1,7 @@
+package edu.duke.ece651.classbuilder;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.LinkedHashMap;
+
+public class JsonGenerator { private LinkedHashMap<String, ArrayList<OneField>> classmap; }

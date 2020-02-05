@@ -8,20 +8,16 @@ import org.json.JSONObject;
 public class Parser {
   private JSONObject json_object;
   private String pack;
-  // private LinkedHashMap<String, LinkedHashMap<String, String>> classmap;
   private LinkedHashMap<String, ArrayList<OneField>> classmap;
 
   public Parser(JSONObject myobject) {
     this.json_object = myobject;
     this.pack = json_object.optString("package");
-    // this.classmap = new LinkedHashMap<String, LinkedHashMap<String, String>>();
     this.classmap = new LinkedHashMap<String, ArrayList<OneField>>();
     generateClassMap();
-    ;
   }
 
   private void generateClassMap() {
-    // System.out.println("generate classarray\n");
     JSONArray classarray = json_object.optJSONArray("classes");
     ClassParser myparser = new ClassParser(classarray);
     this.classmap = myparser.getClassmap();
@@ -31,7 +27,6 @@ public class Parser {
     return this.pack;
   }
 
-  // public LinkedHashMap<String, LinkedHashMap<String, String>> getClassmap() {
   public LinkedHashMap<String, ArrayList<OneField>> getClassmap() {
     return this.classmap;
   }

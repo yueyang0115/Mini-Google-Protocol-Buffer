@@ -1,0 +1,21 @@
+public JSONObject toJSON() throws JSONException {
+       HashMap<Object, Integer> visited = new HashMap<Object, Integer>();
+       int num = 1;
+       return Helper(visited, num);
+}
+
+public JSONObject Helper(HashMap<Object, Integer> visited, int num){
+        JSONObject ans = new JSONObject();
+        if(visited.containsKey(this)){
+            ans.put("ref", visited.get(this));
+            return ans;
+        }else{
+            ans.put("id", num);
+            visited.put(this, num);
+            num++;
+            ans.put("type", this.name);
+            JSONArray array = new JSONArray();
+            ans.put("values", array);
+}
+
+

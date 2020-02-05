@@ -7,14 +7,10 @@ import org.json.JSONObject;
 
 public class FieldParser {
   private JSONArray fieldarray;
-  // private LinkedHashMap<String, String> fieldmap;
-  // private LinkedHashMap<String, JSONObject> fieldmap;
   private ArrayList<OneField> fieldlist;
 
   public FieldParser(JSONArray myarray) {
     this.fieldarray = myarray;
-    // this.fieldmap = new LinkedHashMap<String, String>();
-    // this.fieldmap = new LinkedHashMap<String, JSONObject>();
     this.fieldlist = new ArrayList<>();
     ParseField();
   }
@@ -53,15 +49,10 @@ public class FieldParser {
       System.out.println(myfield.getType());
       myfield.setDimension(mydimension);
       System.out.println(myfield.getDimension());
-      // this.fieldmap.put(myname, type);
       this.fieldlist.add(myfield);
     }
   }
 
-  // public LinkedHashMap<String, String> getFieldmap() {
-  /*public LinkedHashMap<String, JSONObject> getFieldmap() {
-    return this.fieldmap;
-    }*/
   public ArrayList<OneField> getFieldlist() {
     return this.fieldlist;
   }

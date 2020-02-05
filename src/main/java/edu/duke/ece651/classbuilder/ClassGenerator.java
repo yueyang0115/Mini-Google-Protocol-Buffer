@@ -7,12 +7,8 @@ import org.json.JSONObject;
 
 public class ClassGenerator {
   private String classname;
-  // private LinkedHashMap<String, String> fieldmap;
-  // private LinkedHashMap<String, JSONObject> fieldmap;
   private ArrayList<OneField> fieldlist;
   private StringBuilder classcontent;
-
-  // public ClassGenerator(String name, LinkedHashMap<String, String> map) {
 
   public ClassGenerator(String myname, ArrayList<OneField> mylist) {
     this.classname = myname;
@@ -30,18 +26,18 @@ public class ClassGenerator {
         .append("public class ")
         .append(this.classname)
         .append("{\n");
-    constructorcontent.append("public ").append(this.classname);
-    // for (HashMap.Entry<String, String> entry : fieldmap.entrySet()) {
+
     for (int i = 0; i < fieldlist.size(); i++) {
-      // FieldGenerator myfield = new FieldGenerator(entry.getKey(), entry.getValue());
-      FieldGenerator myfield = new FieldGenerator(fieldlist.get(i));
-      fieldcontent.append(myfield.GetField()).append("\n");
+      FieldGenerator myfield = new FieldGenerator(fieldlist.get(i), classname);
+      fieldcontent.append(myfield.GetField());
       constructorcontent.append(myfield.GetConstructor()).append("\n");
       methodcontent.append(myfield.GetMethod()).append("\n");
     }
     classcontent.append(fieldcontent);
     classcontent.append(constructorcontent);
     classcontent.append(methodcontent);
+    JsonGenerator jsgenerator = new JsonGenerator(this.classname, this.fieldlist);
+    classcontent.append(jsgenerator.getToJSON());
     classcontent.append("}\n");
   }
 
