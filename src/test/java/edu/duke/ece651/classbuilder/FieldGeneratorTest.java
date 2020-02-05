@@ -11,7 +11,7 @@ public class FieldGeneratorTest {
     myfield.setDimension(0);
     myfield.setName("abc");
     myfield.setType("char");
-    FieldGenerator field = new FieldGenerator(myfield, "Test");
+    FieldGenerator field = new FieldGenerator(myfield);
     // String method ="public char getAbc(){\nreturn abc;\n}\npublic void setAbc(char
     // abc){\nthis.abc=abc;\n}\n";
 
@@ -28,7 +28,7 @@ public class FieldGeneratorTest {
     myfield.setDimension(1);
     myfield.setName("course");
     myfield.setType("int");
-    FieldGenerator field = new FieldGenerator(myfield, "Test");
+    FieldGenerator field = new FieldGenerator(myfield);
     System.out.println(field.GetField());
     System.out.println(field.GetConstructor());
     System.out.println(field.GetMethod());
@@ -40,7 +40,7 @@ public class FieldGeneratorTest {
     myfield.setDimension(2);
     myfield.setName("course");
     myfield.setType("int");
-    FieldGenerator field = new FieldGenerator(myfield, "Test");
+    FieldGenerator field = new FieldGenerator(myfield);
     System.out.println(field.GetField());
     System.out.println(field.GetConstructor());
     System.out.println(field.GetMethod());

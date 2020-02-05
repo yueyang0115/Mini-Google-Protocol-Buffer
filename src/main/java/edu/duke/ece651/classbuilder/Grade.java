@@ -1,27 +1,36 @@
+package edu.duke.ece651.classbuilder;
 import java.util.*;
 import org.json.*;
 
-public class Course{
+public class Grade{
 
-private int numStudents;
-private Faculty instructor;
+private People people;
+private String student;
+private double grade;
 
-public Course (){
-this.instructor = new Faculty();
+public Grade (){
+this.people = new People();
 }
 
-public int getNumStudents(){
-return numStudents;
+public People getPeople(){
+return people;
 }
-public void setNumStudents(int numStudents){
-this.numStudents=numStudents;
+public void setPeople(People people){
+this.people=people;
 }
 
-public Faculty getInstructor(){
-return instructor;
+public String getStudent(){
+return student;
 }
-public void setInstructor(Faculty instructor){
-this.instructor=instructor;
+public void setStudent(String student){
+this.student=student;
+}
+
+public double getGrade(){
+return grade;
+}
+public void setGrade(double grade){
+this.grade=grade;
 }
 
 public JSONObject toJSON() throws JSONException{
@@ -39,14 +48,17 @@ ans.put("ref",objectmap.get(this));
 else{
 objectmap.put(this,objectmap.size()+1);
 ans.put("id",objectmap.size());
-ans.put("type","Course");
+ans.put("type","Grade");
 JSONArray myarray = new JSONArray();
 JSONObject js_0 = new JSONObject();
-js_0.put("numStudents",this.numStudents);
+js_0.put("people",people.Helper(objectmap));
 myarray.put(js_0);
 JSONObject js_1 = new JSONObject();
-js_1.put("instructor",instructor.Helper(objectmap));
+js_1.put("student",this.student);
 myarray.put(js_1);
+JSONObject js_2 = new JSONObject();
+js_2.put("grade",this.grade);
+myarray.put(js_2);
 ans.put("values",myarray);
 }
 return ans;

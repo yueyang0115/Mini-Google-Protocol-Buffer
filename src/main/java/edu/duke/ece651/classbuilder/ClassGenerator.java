@@ -25,15 +25,18 @@ public class ClassGenerator {
         .append("import org.json.*;\n\n")
         .append("public class ")
         .append(this.classname)
-        .append("{\n");
+        .append("{\n\n");
+    constructorcontent.append("public " + classname + " (){\n"); // public Course(){
 
     for (int i = 0; i < fieldlist.size(); i++) {
-      FieldGenerator myfield = new FieldGenerator(fieldlist.get(i), classname);
+      FieldGenerator myfield = new FieldGenerator(fieldlist.get(i));
       fieldcontent.append(myfield.GetField());
-      constructorcontent.append(myfield.GetConstructor()).append("\n");
+      constructorcontent.append(myfield.GetConstructor());
       methodcontent.append(myfield.GetMethod()).append("\n");
     }
-    classcontent.append(fieldcontent);
+
+    classcontent.append(fieldcontent + "\n");
+    constructorcontent.append("}\n\n"); //}
     classcontent.append(constructorcontent);
     classcontent.append(methodcontent);
     JsonGenerator jsgenerator = new JsonGenerator(this.classname, this.fieldlist);

@@ -7,10 +7,12 @@ import org.json.JSONObject;
 
 public class Generator {
   private LinkedHashMap<String, ArrayList<OneField>> classmap;
+  private String pack;
   private LinkedHashMap<String, String> codemap;
 
-  public Generator(LinkedHashMap<String, ArrayList<OneField>> mymap) {
+  public Generator(LinkedHashMap<String, ArrayList<OneField>> mymap, String mypack) {
     this.classmap = mymap;
+    this.pack = mypack;
     this.codemap = new LinkedHashMap<String, String>();
     GenerateAllClass();
   }
@@ -18,7 +20,12 @@ public class Generator {
   private void GenerateAllClass() {
     for (HashMap.Entry<String, ArrayList<OneField>> entry : classmap.entrySet()) {
       ClassGenerator mygenerator = new ClassGenerator(entry.getKey(), entry.getValue());
-      this.codemap.put(entry.getKey(), mygenerator.GetClass());
+      StringBuilder content = new StringBuilder();
+      if (this.pack != "") {
+        content.append("package " + this.pack + ";\n");
+      }
+      content.append(mygenerator.GetClass());
+      this.codemap.put(entry.getKey(), content.toString());
     }
   }
 

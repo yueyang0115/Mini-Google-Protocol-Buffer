@@ -1,3 +1,4 @@
+
 package edu.duke.ece651.classbuilder;
 
 import java.util.ArrayList;
@@ -19,18 +20,20 @@ public class JsonGenerator {
 
   private void GenerateToJson() {
     content.append("public JSONObject toJSON() throws JSONException{\n")
+        .append("System.out.println(\"going into tojson\");\n")
         .append("HashMap<Object,Integer> objectmap = new HashMap<Object,Integer>();\n")
         .append("return Helper(objectmap);\n")
         .append("}\n\n")
         .append("public JSONObject Helper(HashMap<Object,Integer> objectmap){\n")
         .append("JSONObject ans = new JSONObject();\n")
+        .append("System.out.println(\"object map size:\" + objectmap.size());\n")
         .append("if(objectmap.containsKey(this)){\n")
         .append("ans.put(\"ref\",objectmap.get(this));\n")
         .append("}\n")
         .append("else{\n")
         .append("objectmap.put(this,objectmap.size()+1);\n")
         .append("ans.put(\"id\",objectmap.size());\n")
-        .append("ans.put(\"type\"," + this.classname + ");\n")
+        .append("ans.put(\"type\",\"" + this.classname + "\");\n")
         .append("JSONArray myarray = new JSONArray();\n");
 
     WapperMap mywapper = new WapperMap();

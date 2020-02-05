@@ -11,8 +11,6 @@ import org.json.JSONTokener;
 public class ClassBuilder {
   private JSONObject _json_object;
   private String _pack;
-  // private LinkedHashMap<String, LinkedHashMap<String, String>> _classmap;
-
   private LinkedHashMap<String, ArrayList<OneField>> _classmap;
   private LinkedHashMap<String, String> _codemap;
 
@@ -43,7 +41,7 @@ public class ClassBuilder {
   }
 
   private void GenerateCode() {
-    Generator mygenerator = new Generator(this._classmap);
+    Generator mygenerator = new Generator(this._classmap, this._pack);
     this._codemap = mygenerator.getCodemap();
   }
 

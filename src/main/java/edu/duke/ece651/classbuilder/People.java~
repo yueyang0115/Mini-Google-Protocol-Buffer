@@ -1,29 +1,32 @@
+package edu.duke.ece651.classbuilder;
 import java.util.*;
 import org.json.*;
 
-public class Matrix3d{
+public class People{
 
-private ArrayList<Collection<Collection<Integer>>> data;
+private int age;
+private Grade grade;
 
-public Matrix3d (){
-this.data = new ArrayList<>();
+public People (){
+this.grade = new Grade();
 }
 
-public int numDatas(){
-return data.length;
+public int getAge(){
+return age;
 }
-public void addDatas(Collection<Collection<Integer>> n){
-data.add(n);
+public void setAge(int age){
+this.age=age;
 }
-public Collection<Collection<Integer>> getDatas(int index){
-return data.get(index);
+
+public Grade getGrade(){
+return grade;
 }
-public void setDatas(int index, Collection<Collection<Integer>> n){
-data.set(index,n);
+public void setGrade(Grade grade){
+this.grade=grade;
 }
 
 public JSONObject toJSON() throws JSONException{
-System.out.println("going into tojson");
+going into tojson
 HashMap<Object,Integer> objectmap = new HashMap<Object,Integer>();
 return Helper(objectmap);
 }
@@ -37,11 +40,14 @@ ans.put("ref",objectmap.get(this));
 else{
 objectmap.put(this,objectmap.size()+1);
 ans.put("id",objectmap.size());
-ans.put("type","Matrix3d");
+ans.put("type","People");
 JSONArray myarray = new JSONArray();
 JSONObject js_0 = new JSONObject();
-js_0.put("data",this.data);
+js_0.put("age",this.age);
 myarray.put(js_0);
+JSONObject js_1 = new JSONObject();
+js_1.put("grade",grade.Helper(objectmap));
+myarray.put(js_1);
 ans.put("values",myarray);
 }
 return ans;

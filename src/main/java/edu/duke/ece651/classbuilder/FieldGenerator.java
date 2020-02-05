@@ -4,7 +4,6 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 
 public class FieldGenerator {
-  private String classname;
   private String name;
   private String Name;
   private String type;
@@ -16,7 +15,7 @@ public class FieldGenerator {
   private StringBuilder methodcontent;
   private WapperMap wappermap;
 
-  public FieldGenerator(OneField myfield, String myclassname) {
+  public FieldGenerator(OneField myfield) {
     this.name = myfield.getName();
     this.Name = new Capitalizer(this.name).ToCapitalize();
     this.dimension = myfield.getDimension();
@@ -72,13 +71,12 @@ public class FieldGenerator {
 
   private void GenerateConstructor() {
     if (wappermap.getWapper(this.type) == "None") {
+      constructorcontent.append("this.").append(
+          this.name + " = new " + this.type + "();\n"); // this.instructor  = new Faculty();
     }
     if (dimension != 0) {
-      // public Course(){this.course = new ArrayList<>()}
-      constructorcontent.append("public " + classname + " (){\n")
-          .append("this.")
-          .append(this.name)
-          .append(" = new ArrayList<>();\n}\n");
+      // this.course = new ArrayList<>();
+      constructorcontent.append("this.").append(this.name).append(" = new ArrayList<>();\n");
     }
   }
 
