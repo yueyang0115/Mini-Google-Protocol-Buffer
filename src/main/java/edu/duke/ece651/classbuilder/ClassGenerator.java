@@ -39,12 +39,12 @@ public class ClassGenerator {
     constructorcontent.append("}\n\n"); //}
     classcontent.append(constructorcontent);
     classcontent.append(methodcontent);
-    JsonGenerator jsgenerator = new JsonGenerator(this.classname, this.fieldlist);
-    classcontent.append(jsgenerator.getToJSON());
+    Serialization serializer = new Serialization(this.classname, this.fieldlist);
+    classcontent.append(serializer.getToJSON());
     classcontent.append("}\n");
   }
 
-  public String GetClass() {
+  public String getClassCode() {
     return classcontent.toString();
   }
 }

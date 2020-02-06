@@ -6,12 +6,12 @@ import java.util.HashMap;
 import java.util.LinkedHashMap;
 import org.json.JSONObject;
 
-public class JsonGenerator {
+public class Serialization {
   private String classname;
   private ArrayList<OneField> fieldlist;
   private StringBuilder content;
 
-  public JsonGenerator(String name, ArrayList<OneField> mylist) {
+  public Serialization(String name, ArrayList<OneField> mylist) {
     this.fieldlist = mylist;
     this.classname = name;
     this.content = new StringBuilder();

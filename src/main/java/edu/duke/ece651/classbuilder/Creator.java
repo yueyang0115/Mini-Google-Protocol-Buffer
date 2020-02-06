@@ -25,10 +25,11 @@ public class Creator {
 
   private String ModifyPath(String classname) {
     String filepath = this.basepath;
+    String modified_pack = pack.replace(".", "/");
     // String last = filepath.substring(filepath.length() - 1);
     // char lastChar = filepath.charAt(filepath.length() - 1);
+    filepath += "/" + modified_pack + "/" + classname + ".java";
     System.out.println(filepath);
-    filepath += "/" + classname + ".java";
     // System.out.print(Character.toString(lastchar));
     /*if (last != "/") {
       System.out.println("last!=slash");

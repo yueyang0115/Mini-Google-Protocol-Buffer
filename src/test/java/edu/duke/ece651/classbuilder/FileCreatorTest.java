@@ -7,7 +7,7 @@ import org.junit.jupiter.api.Test;
 public class FileCreatorTest {
   @Test
   public void test_FileCreator_exception() {
-    String path = "result.java";
+    String path = "src/test/resource/result.java";
     FileCreator mycreator = new FileCreator(path, "this is result");
     mycreator.CreateFile();
   }

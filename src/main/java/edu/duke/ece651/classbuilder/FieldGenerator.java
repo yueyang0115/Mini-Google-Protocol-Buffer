@@ -39,10 +39,6 @@ public class FieldGenerator {
         DefineType.append("Collection<");
         ReturnType.append("Collection<");
       }
-      System.out.println("this.type =");
-      System.out.println(this.type);
-      System.out.println("wapper.getwapper(this.type) = ");
-      System.out.println(wappermap.getWapper(this.type));
       DefineType.append(wappermap.getWapper(this.type));
       ReturnType.append(wappermap.getWapper(this.type));
       for (int i = dimension; i != 1; i--) {
@@ -70,10 +66,6 @@ public class FieldGenerator {
   }
 
   private void GenerateConstructor() {
-    if (wappermap.getWapper(this.type) == "None") {
-      constructorcontent.append("this.").append(
-          this.name + " = new " + this.type + "();\n"); // this.instructor  = new Faculty();
-    }
     if (dimension != 0) {
       // this.course = new ArrayList<>();
       constructorcontent.append("this.").append(this.name).append(" = new ArrayList<>();\n");

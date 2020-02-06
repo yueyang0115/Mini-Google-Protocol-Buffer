@@ -9,7 +9,6 @@ private String student;
 private double grade;
 
 public Grade (){
-this.people = new People();
 }
 
 public People getPeople(){

@@ -8,7 +8,6 @@ private int age;
 private Grade grade;
 
 public People (){
-this.grade = new Grade();
 }
 
 public int getAge(){

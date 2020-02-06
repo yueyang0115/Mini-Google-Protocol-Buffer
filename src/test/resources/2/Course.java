@@ -7,7 +7,6 @@ private int numStudents;
 private Faculty instructor;
 
 public Course (){
-this.instructor = new Faculty();
 }
 
 public int getNumStudents(){
