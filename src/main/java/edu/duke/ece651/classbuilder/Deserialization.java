@@ -40,11 +40,25 @@ public class Deserialization {
       String fieldName = new Capitalizer(fieldname).ToCapitalize();
       String fieldtype = fieldlist.get(i).getType();
       content.append("JSONObject val_obj_" + i + " = val_arr.getJSONObject(" + i + ");\n");
-      if (wraper.getWapper(fieldtype) != "None") {
+      if (!wraper.getWapper(fieldtype).equals("None")) {
         // System.out.println("wraper.getWapper(fieldtype)=");
         // System.out.println(wraper.getWapper(fieldtype));
-        content.append("ans.set" + fieldName + "((" + fieldtype + ")val_obj_" + i + ".opt(\""
-            + fieldname + "\"));\n");
+
+        if (fieldtype.equals("byte")) {
+          content.append("ans.set" + fieldName + "((" + fieldtype + ")val_obj_" + i + ".getInt(\""
+              + fieldname + "\"));\n");
+        } else if (fieldtype.equals("short")) {
+          content.append("ans.set" + fieldName + "((" + fieldtype + ")val_obj_" + i + ".getInt(\""
+              + fieldname + "\"));\n");
+        } else if (fieldtype.equals("char")) {
+          content.append("int x = val_obj_" + i + ".getInt(\"" + fieldname + "\");\n")
+              .append("ans.set" + fieldName + "((" + fieldtype + ")x);\n");
+        } else {
+          String fieldType = new Capitalizer(fieldtype).ToCapitalize();
+          content.append("ans.set" + fieldName + "(val_obj_" + i + ".get" + fieldType + "(\""
+              + fieldname + "\"));\n");
+        }
+
       } else {
         content.append("ans.set" + fieldName + "(" + fieldName + "_helper((JSONObject)val_obj_" + i
             + ".opt(\"" + fieldname + "\"),objmap));\n");

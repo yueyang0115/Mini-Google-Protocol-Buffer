@@ -33,14 +33,12 @@ this.grade=grade;
 }
 
 public JSONObject toJSON() throws JSONException{
-System.out.println("going into tojson");
 HashMap<Object,Integer> objectmap = new HashMap<Object,Integer>();
 return Helper(objectmap);
 }
 
 public JSONObject Helper(HashMap<Object,Integer> objectmap){
 JSONObject ans = new JSONObject();
-System.out.println("object map size:" + objectmap.size());
 if(objectmap.containsKey(this)){
 ans.put("ref",objectmap.get(this));
 }

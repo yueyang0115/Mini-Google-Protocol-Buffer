@@ -39,8 +39,13 @@ public class FieldGenerator {
         DefineType.append("Collection<");
         ReturnType.append("Collection<");
       }
-      DefineType.append(wappermap.getWapper(this.type));
-      ReturnType.append(wappermap.getWapper(this.type));
+      if (!(wappermap.getWapper(this.type).equals("None"))) {
+        DefineType.append(wappermap.getWapper(this.type));
+        ReturnType.append(wappermap.getWapper(this.type));
+      } else {
+        DefineType.append(this.type);
+        ReturnType.append(this.type);
+      }
       for (int i = dimension; i != 1; i--) {
         DefineType.append(">");
         ReturnType.append(">");
@@ -103,14 +108,14 @@ public class FieldGenerator {
     // public int numCourses(){  return course.length;}
     methodcontent.append("public int num")
         .append(this.Name)
-        .append("s(){\nreturn ")
+        .append("(){\nreturn ")
         .append(this.name)
-        .append(".length;\n}\n");
+        .append(".size();\n}\n");
 
     // public void addCourses(Collection<Integer> n){ course.add(n);}
     methodcontent.append("public void add")
         .append(this.Name)
-        .append("s(")
+        .append("(")
         .append(this.returntype)
         .append(" n){\n")
         .append(this.name)
@@ -121,14 +126,14 @@ public class FieldGenerator {
         .append(this.returntype)
         .append(" get")
         .append(this.Name)
-        .append("s(int index){\nreturn ")
+        .append("(int index){\nreturn ")
         .append(this.name)
         .append(".get(index);\n}\n");
 
     // void setCourses(int index, Collection<Integer> n){ course.set(index,n);}
     methodcontent.append("public void set")
         .append(this.Name)
-        .append("s(int index, ")
+        .append("(int index, ")
         .append(this.returntype)
         .append(" n){\n")
         .append(this.name)

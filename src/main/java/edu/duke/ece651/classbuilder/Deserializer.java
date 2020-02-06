@@ -24,9 +24,9 @@ JSONArray val_arr = js.optJSONArray("values");
 JSONObject val_obj_0 = val_arr.getJSONObject(0);
 ans.setPeople(People_helper((JSONObject)val_obj_0.opt("people"),objmap));
 JSONObject val_obj_1 = val_arr.getJSONObject(1);
-ans.setStudent((String)val_obj_1.opt("student"));
+ans.setStudent(val_obj_1.getString("student"));
 JSONObject val_obj_2 = val_arr.getJSONObject(2);
-ans.setGrade((double)val_obj_2.opt("grade"));
+ans.setGrade(val_obj_2.getDouble("grade"));
 return ans;
 }
 }
@@ -50,7 +50,7 @@ else{
 objmap.put(id,ans);
 JSONArray val_arr = js.optJSONArray("values");
 JSONObject val_obj_0 = val_arr.getJSONObject(0);
-ans.setAge((int)val_obj_0.opt("age"));
+ans.setAge(val_obj_0.getInt("age"));
 JSONObject val_obj_1 = val_arr.getJSONObject(1);
 ans.setGrade(Grade_helper((JSONObject)val_obj_1.opt("grade"),objmap));
 return ans;

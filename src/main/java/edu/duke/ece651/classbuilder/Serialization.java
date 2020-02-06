@@ -20,13 +20,11 @@ public class Serialization {
 
   private void GenerateToJson() {
     content.append("public JSONObject toJSON() throws JSONException{\n")
-        .append("System.out.println(\"going into tojson\");\n")
         .append("HashMap<Object,Integer> objectmap = new HashMap<Object,Integer>();\n")
         .append("return Helper(objectmap);\n")
         .append("}\n\n")
         .append("public JSONObject Helper(HashMap<Object,Integer> objectmap){\n")
         .append("JSONObject ans = new JSONObject();\n")
-        .append("System.out.println(\"object map size:\" + objectmap.size());\n")
         .append("if(objectmap.containsKey(this)){\n")
         .append("ans.put(\"ref\",objectmap.get(this));\n")
         .append("}\n")
@@ -42,7 +40,7 @@ public class Serialization {
       String type = fieldlist.get(i).getType();
       content.append("JSONObject js_" + i + " = new JSONObject();\n")
           .append("js_" + i + ".put(\"" + name + "\",");
-      if (mywapper.getWapper(type) != "None") {
+      if (!(mywapper.getWapper(type).equals("None"))) {
         content.append("this." + name + ");\n");
       } else {
         content.append(name + ".Helper(objectmap));\n");

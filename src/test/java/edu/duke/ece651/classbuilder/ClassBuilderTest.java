@@ -9,7 +9,7 @@ import org.junit.jupiter.api.Test;
 public class ClassBuilderTest {
   @Test
   public void test_ClassBuilderStream() {
-    InputStream r = getClass().getResourceAsStream("/empty.json"); /// name-reference.json
+    InputStream r = getClass().getResourceAsStream("/nameRef.json"); /// name-reference.json
     ClassBuilder mybuilder = new ClassBuilder(r);
     // assertEquals("", mybuilder.getPack());
     // System.out.println(mybuilder);
