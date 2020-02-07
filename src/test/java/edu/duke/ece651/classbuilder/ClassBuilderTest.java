@@ -17,8 +17,7 @@ public class ClassBuilderTest {
     // assertEquals("int", mybuilder.getClassmap().get("Test").get("x"));
     // System.out.println(mybuilder.getSourceCode("Test"));
     System.out.println(mybuilder.getClassNames());
-    mybuilder.createAllClasses(
-        "/home/yy/ece651-dev-setup/testcases/ece651-hwk1-tester/src/main/java");
+    mybuilder.createAllClasses("src/test/resources/2/");
     // mybuilder.createAllClasses("src/test/resources/1");
   }
 
@@ -40,8 +39,7 @@ public class ClassBuilderTest {
     InputStream r = getClass().getResourceAsStream("/empty.json"); /// name-reference.json
     ClassBuilder mybuilder = new ClassBuilder(r);
     System.out.println(mybuilder.getClassNames());
-    mybuilder.createAllClasses(
-        "/home/yy/ece651-dev-setup/testcases/ece651-hwk1-tester/src/main/java");
+    mybuilder.createAllClasses("src/test/resources/2/");
   }
 
   @Test
@@ -49,8 +47,7 @@ public class ClassBuilderTest {
     InputStream r = getClass().getResourceAsStream("/simple.json"); /// name-reference.json
     ClassBuilder mybuilder = new ClassBuilder(r);
     System.out.println(mybuilder.getClassNames());
-    mybuilder.createAllClasses(
-        "/home/yy/ece651-dev-setup/testcases/ece651-hwk1-tester/src/main/java");
+    mybuilder.createAllClasses("src/test/resources/2/");
   }
 
   @Test
@@ -58,8 +55,7 @@ public class ClassBuilderTest {
     InputStream r = getClass().getResourceAsStream("/nameRef.json"); /// name-reference.json
     ClassBuilder mybuilder = new ClassBuilder(r);
     System.out.println(mybuilder.getClassNames());
-    mybuilder.createAllClasses(
-        "/home/yy/ece651-dev-setup/testcases/ece651-hwk1-tester/src/main/java");
+    mybuilder.createAllClasses("src/test/resources/2/");
   }
 
   @Test
@@ -67,8 +63,7 @@ public class ClassBuilderTest {
     InputStream r = getClass().getResourceAsStream("/arr.json"); /// name-reference.json
     ClassBuilder mybuilder = new ClassBuilder(r);
     System.out.println(mybuilder.getClassNames());
-    mybuilder.createAllClasses(
-        "/home/yy/ece651-dev-setup/testcases/ece651-hwk1-tester/src/main/java");
+    mybuilder.createAllClasses("src/test/resources/2/");
   }
 
   @Test
@@ -85,8 +80,7 @@ public class ClassBuilderTest {
     ClassBuilder mybuilder = new ClassBuilder(
         "{'package':'hwk1.testing.simplearray','classes':[{'name':'Test','fields':[{'name':'arr','type':{'e': 'int'}}]}]}");
     System.out.println(mybuilder.getClassNames());
-    mybuilder.createAllClasses(
-        "/home/yy/ece651-dev-setup/testcases/ece651-hwk1-tester/src/main/java");
+    mybuilder.createAllClasses("src/test/resources/2/");
   }
 
   /*@Test
