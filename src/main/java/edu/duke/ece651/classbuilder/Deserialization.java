@@ -62,17 +62,19 @@ public class Deserialization {
               + i + ".opt(\"" + fieldname + "\"),objmap));\n");
         }
       } else { // array
-
-        content.append("JSONObject val_obj_" + i + " = new JSONObject();\n")
-            .append("val_obj_" + i + "= val_arr.getJSONObject(" + i
-                + ");\n"); // this object is json array {field:value}
-        content.append("JSONArray list_arr_" + i + " = new JSONArray();\n");
-        content.append(
-            "list_arr_" + i + "=val_obj_" + i + ".getJSONArray(\"" + fieldname + "\");\n");
-        content.append("for(int i=0;i<list_arr_" + i + ".length();i++){\n");
-        content.append("ans.add" + fieldName + "(" + fieldtype + "_helper("
-            + "list_arr_" + i + ".getJSONObject(i),objmap));\n");
-        content.append("}\n");
+        if (wraper.getWapper(fieldtype).equals("None")) {
+          content.append("JSONObject val_obj_" + i + " = new JSONObject();\n")
+              .append("val_obj_" + i + "= val_arr.getJSONObject(" + i
+                  + ");\n"); // this object is json array {field:value}
+          content.append("JSONArray list_arr_" + i + " = new JSONArray();\n");
+          content.append(
+              "list_arr_" + i + "=val_obj_" + i + ".getJSONArray(\"" + fieldname + "\");\n");
+          content.append("for(int i=0;i<list_arr_" + i + ".length();i++){\n");
+          content.append("ans.add" + fieldName + "(" + fieldtype + "_helper("
+              + "list_arr_" + i + ".getJSONObject(i),objmap));\n");
+          content.append("}\n");
+        } else {
+        }
       }
     }
     content.append("return ans;\n").append("}\n}\n\n");

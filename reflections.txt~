@@ -1,0 +1,33 @@
+1. Was there any particular type of task you overestimated/ underestimated time for? Can you say anything about what types of tasks you find especially hard to estimate? Do you have any insight into why?
+
+I underestimated the time for deseriatization and serialization. I have no basic idea of how to write them until the very last time. There are too many situations that is likely to forget at the first time. I think it is because I am still a novie programming, lacking experience and having little idea of how to write such code.
+I underestimated the time for hard coding. Maybe I use bad abstraction.
+
+2. How well did you meet your intermediate deadlines?
+I spend a lot time thinking about the structure of my code and the data structure I can use. But it still looks not that good...
+
+3. Suppose your customer were to change the requirements now. How
+easy/hard would
+it be to accommodate the following changes. Why are these easy
+or hard?
+        o Instead of just producing Java code, your program must now
+be accept an option for what language to produce code in:
+Java,
+to produce,
+your program must also be able to accept XML files.
+        o Your generated classes must be able to serialize/deserialize
+into XML
+as well as JSON
+4. As you have been doing this assignment, you have been learning a
+lot more
+about object-oriented design. If you had known at the start
+what you know
+      now, would you have done anything differently?  Would any of the
+design
+      patterns we learned about in class have worked well in this
+assignment?
+5. What lessons did you learn from doing this assignment? How will
+it inform
+      your future software development in this class, other classes,
+and/or
+      your professional life?

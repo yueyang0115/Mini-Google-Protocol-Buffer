@@ -72,13 +72,22 @@ public class ClassBuilderTest {
   }
 
   @Test
-  public void test_prims() {
+  public void test_primitive() {
     InputStream r = getClass().getResourceAsStream("/prims.json"); /// name-reference.json
     ClassBuilder mybuilder = new ClassBuilder(r);
     System.out.println(mybuilder.getClassNames());
     mybuilder.createAllClasses(
         "/home/yy/ece651-dev-setup/testcases/ece651-hwk1-tester/src/main/java");
   }
+
+  @Test
+  public void test_prims() {
+    InputStream r = getClass().getResourceAsStream("/prims.json"); /// name-reference.json
+    ClassBuilder mybuilder = new ClassBuilder(r);
+    System.out.println(mybuilder.getClassNames());
+    mybuilder.createAllClasses("src/test/resources/2/");
+  }
+
   /*@Test
   public void test_ToJson1() {
     ClassBuilder mybuilder = new ClassBuilder(

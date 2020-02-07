@@ -147,35 +147,35 @@ Comments: I tried to do less hard-coding but it still cost me much time to gener
 Task: Modify package related staff.
 Estimated Time: 2 hour
 Target Deadline: 02/02
-Actual Time:
-Actual Delivery:
-Commit ID:
-Comments:
+Actual Time: 1 hour
+Actual Delivery: 02/04
+Commit ID:  f877de70
+Comments: It took me sometime to figure out absolute and relative path.
 
-17.
+18.
 Task: Realize basic serialization.
 Estimated Time: 3 hour
 Target Deadline: 02/03
-Actual Time:
-Actual Delivery:
-Commit ID:
-Comments:
+Actual Time:  5 hour
+Actual Delivery: 02/05
+Commit ID:9a4958da
+Comments: It took me longer to do this and debug. At first I didn't have the basic idea of writing a helper function and construct MAP<Object,Integer>.
 
-18.
+19.
 Task: Realize basic deserialization.
 Estimated Time: 3 hour
 Target Deadline: 02/03
-Actual Time:
-Actual Delivery:
-Commit ID:
-Comments:
+Actual Time: 5 hour
+Actual Delivery: 02/06
+Commit ID: 6628262e
+Comments: It took me longer to do this and debug. Deserialize is similar with serialize, but thet all have many situations to consider.
 
-19.
-Task: Modify Serialization and handle object field situation.
+20.
+Task: Testcase-oriented-debugging.
 Estimated Time: 2 hour
 Target Deadline: 02/03
-Actual Time:
-Actual Delivery:
-Commit ID:
-Comments:
+Actual Time: 5 hour
+Actual Delivery: 02/06
+Commit ID: 1c408a05
+Comments: It took me a really really long time to debugging....
 

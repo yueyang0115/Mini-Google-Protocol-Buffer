@@ -1,0 +1,19 @@
+1. Was there any particular type of task you overestimated/ underestimated time for? Can you say anything about what types of tasks you find especially hard to estimate? Do you have any insight into why?
+
+I underestimated the time for deseriatization and serialization. I have no basic idea of how to write them until the very last time. I think this is the kind of task that is hard to estimate. Because you need to think of using helper function, that's the idea that some peole can come up within 30 minutes while others need 3 hours.
+
+2. How well did you meet your intermediate deadlines?
+
+I spend a lot time thinking about the structure of my code and the data structure I can use, but it still looks not that good...I missed some intermediated deadline, but I have started earlier.
+
+3. Suppose your customer were to change the requirements now. How easy/hard would it be to accommodate the following changes. Why are these easy or hard?
+
+To meet the requirements, the frame of my code doesn't need to be changed, but there are too many details to change, chaging the hardcode part is a little difficult.
+
+4. As you have been doing this assignment, you have been learning a lot more about object-oriented design. If you had known at the start what you know now, would you have done anything differently?  Would any of the design patterns we learned about in class have worked well in this assignment?
+
+I would not create this many classes!! I would create the most frequently used fuction in a general class and make it static. Don't repeat yourself!!
+
+5. What lessons did you learn from doing this assignment? How will it inform your future software development in this class, other classes, and/or your professional life?
+
+I learned that there is still a long way for me to go to be a good programmer. Practicing makes perfect! First time to JAVA, I learned a lot and as a novice programmer, i should keep being curious and keep asking questions.
