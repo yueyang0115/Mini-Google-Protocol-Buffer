@@ -33,35 +33,46 @@ public class Deserialization {
         .append("}\n")
         .append("else{\n")
         .append("objmap.put(id,ans);\n")
-        .append("JSONArray val_arr = js.optJSONArray(\"values\");\n");
+        .append("JSONArray val_arr = new JSONArray();\n")
+        .append("val_arr=js.optJSONArray(\"values\");\n");
     WapperMap wraper = new WapperMap();
     for (int i = 0; i < fieldlist.size(); i++) {
       String fieldname = fieldlist.get(i).getName();
       String fieldName = new Capitalizer(fieldname).ToCapitalize();
       String fieldtype = fieldlist.get(i).getType();
-      content.append("JSONObject val_obj_" + i + " = val_arr.getJSONObject(" + i + ");\n");
-      if (!wraper.getWapper(fieldtype).equals("None")) {
-        // System.out.println("wraper.getWapper(fieldtype)=");
-        // System.out.println(wraper.getWapper(fieldtype));
+      int dimension = fieldlist.get(i).getDimension();
 
-        if (fieldtype.equals("byte")) {
-          content.append("ans.set" + fieldName + "((" + fieldtype + ")val_obj_" + i + ".getInt(\""
-              + fieldname + "\"));\n");
-        } else if (fieldtype.equals("short")) {
-          content.append("ans.set" + fieldName + "((" + fieldtype + ")val_obj_" + i + ".getInt(\""
-              + fieldname + "\"));\n");
-        } else if (fieldtype.equals("char")) {
-          content.append("int x = val_obj_" + i + ".getInt(\"" + fieldname + "\");\n")
-              .append("ans.set" + fieldName + "((" + fieldtype + ")x);\n");
+      if (dimension == 0) {
+        content.append("JSONObject val_obj_" + i + " = new JSONObject();\n")
+            .append("val_obj_" + i + "= val_arr.getJSONObject(" + i + ");\n");
+        if (!wraper.getWapper(fieldtype).equals("None")) {
+          if (fieldtype.equals("byte") || fieldtype.equals("char")) {
+            content.append("ans.set" + fieldName + "((" + fieldtype + ")val_obj_" + i + ".getInt(\""
+                + fieldname + "\"));\n");
+          } else if (fieldtype.equals("short")) {
+            content.append("ans.set" + fieldName + "((" + fieldtype + ")val_obj_" + i + ".getInt(\""
+                + fieldname + "\"));\n");
+          } else {
+            String fieldType = new Capitalizer(fieldtype).ToCapitalize();
+            content.append("ans.set" + fieldName + "(val_obj_" + i + ".get" + fieldType + "(\""
+                + fieldname + "\"));\n");
+          }
         } else {
-          String fieldType = new Capitalizer(fieldtype).ToCapitalize();
-          content.append("ans.set" + fieldName + "(val_obj_" + i + ".get" + fieldType + "(\""
-              + fieldname + "\"));\n");
+          content.append("ans.set" + fieldName + "(" + fieldtype + "_helper((JSONObject)val_obj_"
+              + i + ".opt(\"" + fieldname + "\"),objmap));\n");
         }
+      } else { // array
 
-      } else {
-        content.append("ans.set" + fieldName + "(" + fieldName + "_helper((JSONObject)val_obj_" + i
-            + ".opt(\"" + fieldname + "\"),objmap));\n");
+        content.append("JSONObject val_obj_" + i + " = new JSONObject();\n")
+            .append("val_obj_" + i + "= val_arr.getJSONObject(" + i
+                + ");\n"); // this object is json array {field:value}
+        content.append("JSONArray list_arr_" + i + " = new JSONArray();\n");
+        content.append(
+            "list_arr_" + i + "=val_obj_" + i + ".getJSONArray(\"" + fieldname + "\");\n");
+        content.append("for(int i=0;i<list_arr_" + i + ".length();i++){\n");
+        content.append("ans.add" + fieldName + "(" + fieldtype + "_helper("
+            + "list_arr_" + i + ".getJSONObject(i),objmap));\n");
+        content.append("}\n");
       }
     }
     content.append("return ans;\n").append("}\n}\n\n");

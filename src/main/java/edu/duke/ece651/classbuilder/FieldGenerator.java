@@ -73,7 +73,10 @@ public class FieldGenerator {
   private void GenerateConstructor() {
     if (dimension != 0) {
       // this.course = new ArrayList<>();
-      constructorcontent.append("this.").append(this.name).append(" = new ArrayList<>();\n");
+      /*constructorcontent.append("this.").append(this.name).append(
+        " = new ArrayList<" + this.type + ">();\n");*/
+      constructorcontent.append("this.").append(this.name).append(
+          " = new " + this.definetype + "();\n");
     }
   }
 

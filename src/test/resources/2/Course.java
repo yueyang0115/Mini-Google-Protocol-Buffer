@@ -34,17 +34,17 @@ if(objectmap.containsKey(this)){
 ans.put("ref",objectmap.get(this));
 }
 else{
+ans.put("id",objectmap.size()+1);
 objectmap.put(this,objectmap.size()+1);
-ans.put("id",objectmap.size());
 ans.put("type","Course");
 JSONArray myarray = new JSONArray();
+ans.put("values",myarray);
 JSONObject js_0 = new JSONObject();
 js_0.put("numStudents",this.numStudents);
 myarray.put(js_0);
 JSONObject js_1 = new JSONObject();
 js_1.put("instructor",instructor.Helper(objectmap));
 myarray.put(js_1);
-ans.put("values",myarray);
 }
 return ans;
 }

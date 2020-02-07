@@ -19,11 +19,14 @@ return (Course)objmap.get(id);
 }
 else{
 objmap.put(id,ans);
-JSONArray val_arr = js.optJSONArray("values");
-JSONObject val_obj_0 = val_arr.getJSONObject(0);
+JSONArray val_arr = new JSONArray();
+val_arr=js.optJSONArray("values");
+JSONObject val_obj_0 = new JSONObject();
+val_obj_0= val_arr.getJSONObject(0);
 ans.setNumStudents(val_obj_0.getInt("numStudents"));
-JSONObject val_obj_1 = val_arr.getJSONObject(1);
-ans.setInstructor(Instructor_helper((JSONObject)val_obj_1.opt("instructor"),objmap));
+JSONObject val_obj_1 = new JSONObject();
+val_obj_1= val_arr.getJSONObject(1);
+ans.setInstructor(Faculty_helper((JSONObject)val_obj_1.opt("instructor"),objmap));
 return ans;
 }
 }

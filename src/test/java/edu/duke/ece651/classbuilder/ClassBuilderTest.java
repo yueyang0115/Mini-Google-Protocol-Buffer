@@ -36,11 +36,55 @@ public class ClassBuilderTest {
   }
 
   @Test
+  public void test_empty() {
+    InputStream r = getClass().getResourceAsStream("/empty.json"); /// name-reference.json
+    ClassBuilder mybuilder = new ClassBuilder(r);
+    System.out.println(mybuilder.getClassNames());
+    mybuilder.createAllClasses(
+        "/home/yy/ece651-dev-setup/testcases/ece651-hwk1-tester/src/main/java");
+  }
+
+  @Test
+  public void test_simple() {
+    InputStream r = getClass().getResourceAsStream("/simple.json"); /// name-reference.json
+    ClassBuilder mybuilder = new ClassBuilder(r);
+    System.out.println(mybuilder.getClassNames());
+    mybuilder.createAllClasses(
+        "/home/yy/ece651-dev-setup/testcases/ece651-hwk1-tester/src/main/java");
+  }
+
+  @Test
+  public void test_nameRef() {
+    InputStream r = getClass().getResourceAsStream("/nameRef.json"); /// name-reference.json
+    ClassBuilder mybuilder = new ClassBuilder(r);
+    System.out.println(mybuilder.getClassNames());
+    mybuilder.createAllClasses(
+        "/home/yy/ece651-dev-setup/testcases/ece651-hwk1-tester/src/main/java");
+  }
+
+  @Test
+  public void test_arr() {
+    InputStream r = getClass().getResourceAsStream("/arr.json"); /// name-reference.json
+    ClassBuilder mybuilder = new ClassBuilder(r);
+    System.out.println(mybuilder.getClassNames());
+    mybuilder.createAllClasses(
+        "/home/yy/ece651-dev-setup/testcases/ece651-hwk1-tester/src/main/java");
+  }
+
+  @Test
+  public void test_prims() {
+    InputStream r = getClass().getResourceAsStream("/prims.json"); /// name-reference.json
+    ClassBuilder mybuilder = new ClassBuilder(r);
+    System.out.println(mybuilder.getClassNames());
+    mybuilder.createAllClasses(
+        "/home/yy/ece651-dev-setup/testcases/ece651-hwk1-tester/src/main/java");
+  }
+  /*@Test
   public void test_ToJson1() {
     ClassBuilder mybuilder = new ClassBuilder(
         "{'classes':[{'name':'Grade','fields':[{'name':'people','type':'People'},{'name':'student','type':'String'},{'name':'grade','type':'double'}]},{'name':'People','fields':[{'name':'age','type':'int'},{'name':'grade','type':'Grade'}]}],'package':'edu.duke.ece651.classbuilder'}");
     mybuilder.createAllClasses("src/main/java");
-    /*
+
     Grade g = new Grade();
     People p = new People();
 
@@ -61,6 +105,6 @@ public class ClassBuilderTest {
     System.out.println("new_g.grade=");
     System.out.println(new_g.getGrade());
     System.out.println("new_g.people=");
-    System.out.println(new_g.getPeople().toString());*/
-  }
+    System.out.println(new_g.getPeople().toString());
+    }*/
 }
