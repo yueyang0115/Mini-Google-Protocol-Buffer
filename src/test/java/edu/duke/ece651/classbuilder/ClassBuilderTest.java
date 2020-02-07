@@ -12,7 +12,7 @@ public class ClassBuilderTest {
     InputStream r = getClass().getResourceAsStream("/nameRef.json"); /// name-reference.json
     ClassBuilder mybuilder = new ClassBuilder(r);
     // assertEquals("", mybuilder.getPack());
-    // System.out.println(mybuilder);
+    System.out.println(mybuilder);
     // System.out.println(mybuilder.getClassmap());
     // assertEquals("int", mybuilder.getClassmap().get("Test").get("x"));
     // System.out.println(mybuilder.getSourceCode("Test"));
@@ -27,7 +27,7 @@ public class ClassBuilderTest {
     ClassBuilder mybuilder = new ClassBuilder(
         "{'classes':[{'name':'Course','fields':[{'name':'numStudents','type':'int'},{'name':'instructor','type':'Faculty'}]}]}");
     assertEquals("", mybuilder.getPack());
-    // System.out.println(mybuilder);
+    System.out.println(mybuilder);
     // System.out.println(mybuilder.getClassmap());
     // assertEquals("int", mybuilder.getClassmap().get("Course").get("numStudents"));
     System.out.println(mybuilder.getSourceCode("Course"));
@@ -81,11 +81,12 @@ public class ClassBuilderTest {
   }
 
   @Test
-  public void test_prims() {
-    InputStream r = getClass().getResourceAsStream("/prims.json"); /// name-reference.json
-    ClassBuilder mybuilder = new ClassBuilder(r);
+  public void test_simplearray() {
+    ClassBuilder mybuilder = new ClassBuilder(
+        "{'package':'hwk1.testing.simplearray','classes':[{'name':'Test','fields':[{'name':'arr','type':{'e': 'int'}}]}]}");
     System.out.println(mybuilder.getClassNames());
-    mybuilder.createAllClasses("src/test/resources/2/");
+    mybuilder.createAllClasses(
+        "/home/yy/ece651-dev-setup/testcases/ece651-hwk1-tester/src/main/java");
   }
 
   /*@Test

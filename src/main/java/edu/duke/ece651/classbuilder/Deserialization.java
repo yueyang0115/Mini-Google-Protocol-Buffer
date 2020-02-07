@@ -74,6 +74,13 @@ public class Deserialization {
               + "list_arr_" + i + ".getJSONObject(i),objmap));\n");
           content.append("}\n");
         } else {
+          content.append("JSONObject val_obj_" + i + " = new JSONObject();\n");
+          content.append("val_obj_" + i + "= val_arr.getJSONObject(" + i + ");\n");
+          content.append("for(int i =0;i<val_obj_" + i + ".getJSONArray(\"" + fieldname
+              + "\").length();i++){\n");
+          content.append("ans.add" + fieldName + "(val_obj_" + i + ".getJSONArray(\"" + fieldname
+              + "\").getInt(i));\n");
+          content.append("}\n");
         }
       }
     }

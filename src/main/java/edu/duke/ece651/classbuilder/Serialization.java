@@ -51,14 +51,21 @@ public class Serialization {
         }
         content.append("myarray.put(js_" + i + ");\n");
       } else { // array
-
-        content.append("JSONArray fieldarray = new JSONArray();\n");
-        content.append("for(int i=0;i<" + name + ".size();i++){\n");
-        content.append("fieldarray.put(" + name + ".get(i).Helper(objectmap));\n");
-        content.append("}\n");
-        content.append("JSONObject js_" + i + " = new JSONObject();\n");
-        content.append("js_" + i + ".put(\"" + name + "\",fieldarray);\n");
-        content.append("myarray.put(js_" + i + ");\n");
+        if (mywapper.getWapper(type).equals("None")) {
+          content.append("JSONArray fieldarray = new JSONArray();\n");
+          content.append("for(int i=0;i<" + name + ".size();i++){\n");
+          content.append("fieldarray.put(" + name + ".get(i).Helper(objectmap));\n");
+          content.append("}\n");
+          content.append("JSONObject js_" + i + " = new JSONObject();\n");
+          content.append("js_" + i + ".put(\"" + name + "\",fieldarray);\n");
+          content.append("myarray.put(js_" + i + ");\n");
+        } else {
+          content.append("JSONArray fieldarray = new JSONArray();\n");
+          content.append("JSONObject js_" + i + " = new JSONObject();\n");
+          content.append("js_" + i + ".put(\"" + name + "\",this." + name + ");\n");
+          content.append("fieldarray.put(js_" + i + ");\n");
+          content.append("ans.put(\"values\",fieldarray);\n");
+        }
       }
     }
 
